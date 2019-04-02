@@ -3,37 +3,13 @@ const login = require('../../tools/login.js')
 const app = getApp();
 Page({
   data: {
+    resPath: 'https://community.jystu.cn',
     bannerList: [
       'https://dummyimage.com/600x400/000/fff',
       'https://dummyimage.com/600x400/000/fff',
       'https://dummyimage.com/600x400/000/fff'
     ],
-    bookList: [{
-        img: 'https://dummyimage.com/600x400/000/fff',
-        bookName: '计算科学与导论',
-        author: '刘某某',
-        introduction: '这是一本介绍某某某的图书,其它的内容暂时想不出来懒懒不想出去走'
-      }, {
-        img: 'https://dummyimage.com/600x400/000/fff',
-        bookName: '计算科学与导论',
-        author: '刘某某',
-        introduction: '这是一本介绍某某某的图书,其它的内容暂时想不出来懒懒不想出去走'
-      }, {
-        img: 'https://dummyimage.com/600x400/000/fff',
-        bookName: '计算科学与导论',
-        author: '刘某某',
-        introduction: '这是一本介绍某某某的图书,其它的内容暂时想不出来懒懒不想出去走'
-      }, {
-        img: 'https://dummyimage.com/600x400/000/fff',
-        bookName: '计算科学与导论',
-        author: '刘某某',
-        introduction: '这是一本介绍某某某的图书,其它的内容暂时想不出来懒懒不想出去走'
-      }, {
-        img: 'https://dummyimage.com/600x400/000/fff',
-        bookName: '计算科学与导论',
-        author: '刘某某',
-        introduction: '这是一本介绍某某某的图书,其它的内容暂时想不出来懒懒不想出去走'
-      }],
+    bookList: [],
     _needLogin: false
   },
   goBorrow() {
@@ -46,18 +22,59 @@ Page({
       url: '/pages/return/return',
     })
   },
-  goBookDetail() {
+  goBookDetail(e) {
     wx.navigateTo({
-      url: '/pages/bookDetail/bookDetail',
+      url: '/pages/bookDetail/bookDetail?bookid=' + e.currentTarget.dataset.id
     })
   },
   onShow() {
-    if (!app.globalData.userInfo) {
-      login.needLogin(this)
-    }
     this.setData({
       _needLogin: !app.globalData.userInfo
     })
-    console.log(app.globalData.userInfo)
+    if (!app.globalData.userInfo) {
+      login.needLogin(this, ()=> {
+        this.onShow();
+      })
+      return;
+    }
+    // 获取广告信息
+    wx.request({
+      url: 'https://community.jystu.cn/activity/mini/libAdvers',
+      dataType: 'json',
+      method: 'GET',
+      header: {
+        'x-access-token': app.globalData.token
+      },
+      success: (res) => {
+        if(!res || res.data.errcode != 0) {
+          return;
+        }
+        this.setData({
+          // bannerList: res.data.description.data.advers
+        })
+      }
+    })
+    // 获取图书列表
+    wx.request({
+      url: 'https://community.jystu.cn/activity/mini/libIndex',
+      dataType: 'json',
+      method: 'GET',
+      header: {
+        'x-access-token': app.globalData.token
+      },
+      data: {
+        page: 1
+      },
+      success: (res) => {
+        console.log(res)
+        if (!res || res.data.errcode != 0) {
+          win.toast("获取列表失败", "none")
+          return;
+        }
+        this.setData({
+          bookList: res.data.description.data.books
+        })
+      }
+    })
   }
 })

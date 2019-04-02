@@ -4,7 +4,7 @@
   height: 300rpx;
   margin: 16rpx 24rpx 24rpx 20rpx;
   border-radius: 10rpx;
-  border: 2rpx solid #BBBBBB;
+  border: 2rpx solid #bbb;
   overflow: hidden;
 }
 
@@ -21,22 +21,23 @@
 .function {
   width: 100%;
   height: 200rpx;
-  border: 2rpx solid #BBBBBB;
+  padding: 0 60rpx;
+  border: 2rpx solid #bbb;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .function_item {
-  width: 114rpx;
+  width: 80rpx;
   height: 200rpx;
 }
 
 .function_item image {
-  width: 114rpx;
-  height: 114rpx;
-  margin-top: 20rpx;
-  border-radius: 100%;
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 37rpx;
+  /* border-radius: 100%; */
 }
 
 .function_item text {
@@ -48,7 +49,7 @@
 
 .book_recommend {
   width: 100%;
-  border: 2rpx solid #BBBBBB;
+  border: 2rpx solid #bbb;
   box-sizing: border-box;
   border-radius: 10rpx;
   padding: 20rpx;
@@ -67,7 +68,7 @@
   width: 100%;
   height: 280rpx;
   border-radius: 10rpx;
-  border: 2rpx solid #BBBBBB;
+  border: 2rpx solid #bbb;
   box-sizing: border-box;
   margin-bottom: 10rpx;
 }
@@ -101,11 +102,19 @@
   font-size: 28rpx;
   line-height: 46rpx;
   color: #101010;
+}
+/* 文本超过一行省略号表示 */
+.book text:first-of-type {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
+/* 文本超过两行省略号表示 */
 .book text:last-of-type {
-  height: 92rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

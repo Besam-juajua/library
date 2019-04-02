@@ -4,17 +4,44 @@ exports.needLogin = (page, callback) => {
   page.getUserInfo = (e) => {
     win.loading('正在加载')
     // 用户点击了授权
-    if (e.detail.userInfo) {
+    if (app.globalData.code && e.detail.userInfo) {
       //获取用户信息
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo;
-          console.log(res)
-          wx.setStorage({
-            key: 'userInfo',
-            data: res.userInfo
-          });
-          if (callback) callback();
+          let userInfo = res.userInfo;
+          app.globalData.userInfo = userInfo;
+          wx.request({
+            url: 'https://community.jystu.cn/activity/mini/libLogin',
+            dataType: 'json',
+            method: 'POST',
+            data: {
+              code: app.globalData.code,
+              nickname: userInfo.nickName,
+              gender: userInfo.gender,
+              city: userInfo.city,
+              avatarUrl: userInfo.avatarUrl,
+              country: userInfo.country,
+              province: userInfo.province
+            },
+            success: (rsp)=> {
+              if (!rsp || rsp.data.errcode != 0) {
+                win.toast("授权失败", "none");
+                return;
+              }
+              win.toast("授权成功");
+              let token = rsp.data.description.data.token;
+              app.globalData.token = token;
+              wx.setStorage({
+                key: 'userInfo',
+                data: userInfo
+              });
+              wx.setStorage({
+                key: 'userToken',
+                data: token
+              });
+              if (callback) callback();
+            }
+          })
         }
       })
       page.setData({

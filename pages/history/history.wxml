@@ -3,12 +3,12 @@
     <view class='record_content'>
       <view class='content_title'>
         <image src='../../images/book_id.png'></image>
-        <h3>{{item.bookName}}</h3>
+        <h3>{{item.bookId.name}}</h3>
       </view>
-      <text>借书时间：{{item.borrowTime}}</text>
-      <text>还书时间：{{item.returnTime}}</text>
-      <text>当前状态：{{item.currentState}}</text>
+      <text>借书时间：{{item.createDate}}</text>
+      <text>还书时间：{{item.rentDate}}</text>
+      <text>当前状态：{{item.bookId.state==2? "异常" : "正常"}}</text>
     </view>
-    <button class="btn {{item.hasReturn==0?'btn_primary':item.hasReturn==1?'btn_info':'btn_danger'}}">{{item.hasReturn==0?"已归还":item.hasReturn==1?"租用中":"已逾期"}}</button>
+    <button class="btn {{item.state==1?'btn_primary':item.state==0?'btn_info':'btn_danger'}}">{{item.state==0?"待归还":item.state==1?"已归还":"已逾期"}}</button>
   </view>
 </view>

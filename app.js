@@ -5,14 +5,16 @@ App({
     // 登录
     wx.login({
       success: res => {
-        console.log(res)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        this.globalData.code = res.code;
       }
-    })
-    this.globalData.userInfo = wx.getStorageSync('userInfo')
+    });
+    this.globalData.userInfo = wx.getStorageSync('userInfo');
+    this.globalData.token = wx.getStorageSync('userToken');
   },
 
   globalData: {
-    userInfo: null
+    code: null,
+    userInfo: null,
+    token: null
   }
 })

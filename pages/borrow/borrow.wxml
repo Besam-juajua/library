@@ -2,13 +2,13 @@
   <view class='search'>
     <view class='input'>
       <image src='../../images/book_id.png'></image>
-      <input type='text' placeholder='请输入当前书籍对应编号'></input>
-      <image src='../../images/test.png'></image>
+      <input type='text' placeholder='请输入当前书籍对应编号' value='{{bookNo}}' bindinput='enterCode'></input>
+      <image src='../../images/scan_code.png' bindtap='scanCode'></image>
     </view>
     <view class='input'>
       <image src='../../images/book_id.png'></image>
-      <input type='text' placeholder='请输入要借的天数'></input>
+      <input type='text' placeholder='请输入要借的天数' bindinput='enterDay'></input>
     </view>
   </view>
-  <button class='confirm'>确定</button>
+  <button class='confirm' bindtap='toSubmit'>确定</button>
 </view>

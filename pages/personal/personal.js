@@ -3,12 +3,8 @@ const login = require('../../tools/login.js')
 const app = getApp();
 Page({
   data: {
-    profile: {
-      img: 'https://dummyimage.com/600x400/000/fff',
-      nickName: '刘某某',
-      id: '131110191',
-      willReturn: '0'
-    },
+    resPath: 'https://community.jystu.cn',
+    profile: {},
     _needLogin: false
   },
   goIdentification() {
@@ -32,11 +28,34 @@ Page({
     })
   },
   onShow() {
-    if (!app.globalData.userInfo) {
-      login.needLogin(this)
-    }
     this.setData({
       _needLogin: !app.globalData.userInfo
     })
+    if (!app.globalData.userInfo) {
+      login.needLogin(this, ()=> {
+        this.onShow();
+      });
+      return;
+    }
+    wx.request({
+      url: 'https://community.jystu.cn/activity/mini/libUser',
+      dataType: 'json',
+      method: 'GET',
+      header: {
+        'x-access-token': app.globalData.token
+      },
+      success: (res)=> {
+        console.log(res.data.description.data.userinfo)
+        if (!res || res.data.errcode != 0) {
+          win.toast("请求失败", "none");
+          return;
+        }
+        this.setData({
+          profile: res.data.description.data.userinfo
+        })
+      }
+    })
+    
+    
   }
 })

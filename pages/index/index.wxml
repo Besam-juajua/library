@@ -11,13 +11,13 @@
   <view class='function'>
     <view class='function_item' bindtap='goBorrow'>
       <!-- <view class='borrow'> -->
-        <image src='https://dummyimage.com/600x400/000/fff'></image>
+        <image src='../../images/rent_book.png'></image>
         <text>借书</text>
       <!-- </view> -->
     </view>
     <view class='function_item' bindtap='goReturn'>
       <!-- <view class='return'> -->
-        <image src='https://dummyimage.com/600x400/000/fff'></image>
+        <image src='../../images/return_book.png'></image>
         <text>还书</text>
       <!-- </view> -->
     </view>
@@ -25,12 +25,12 @@
   <!-- 图书推荐 -->
   <view class='book_recommend'>
     <h2>图书推荐</h2>
-    <view class='recommend_item' wx:for="{{bookList}}" wx:key='' bindtap='goBookDetail'>
-      <image src='{{item.img}}'></image>
+    <view class='recommend_item' wx:for="{{bookList}}" wx:key='' data-id="{{item._id}}" data-bookno="{{item.bookNo}}" bindtap='goBookDetail'>
+      <image src='{{resPath}}{{item.thumb}}'></image>
       <view class='book'>
-        <h3>{{item.bookName}}</h3>
+        <h3>{{item.name}}</h3>
         <text>作者：{{item.author}}</text>
-        <text>简介：{{item.introduction}}</text>
+        <text>简介：{{item.content}}</text>
       </view>
     </view>
   </view>

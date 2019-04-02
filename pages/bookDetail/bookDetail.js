@@ -1,12 +1,36 @@
+const app = getApp();
+const win = require('../../tools/win.js');
 Page({
   data: {
-    book: {
-      img: '../../images/test.png',
-      name: '计算机科学与导论',
-      author: '刘某某',
-      publish: '不知道啥出版社',
-      num: 'Z121212121',
-      introduction: '这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简介这本书主要讲了书籍简'
-    }
+    resPath: 'https://community.jystu.cn',
+    book: {}
+  },
+  onLoad(options) {
+    let bookId = options.bookid;
+    wx.request({
+      url: 'https://community.jystu.cn/activity/mini/bookDetail',
+      dataType: 'json',
+      method: 'GET',
+      header: {
+        'x-access-token': app.globalData.token
+      },
+      data: {
+        id: bookId
+      },
+      success: (res) => {
+        if (!res || res.data.errcode != 0) {
+          win.toast("请求失败", "none");
+          return;
+        }
+        this.setData({
+          book: res.data.description.data.detail
+        })
+      }
+    })
+  },
+  goBorrow() {
+    wx.navigateTo({
+      url: '/pages/borrow/borrow?bookNo=' + this.data.book.bookNo
+    })
   }
 })

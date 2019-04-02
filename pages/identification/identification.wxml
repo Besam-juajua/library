@@ -2,20 +2,20 @@
   <view class='search'>
     <view class='input'>
       <image src='../../images/book_id.png'></image>
-      <input type='text' placeholder='请输入真实姓名'></input>
+      <input type='text' placeholder='请输入真实姓名' bindinput='setName'></input>
     </view>
     <view class='input'>
       <image src='../../images/book_id.png'></image>
-      <input type='text' placeholder='请输入学号'></input>
+      <input type='text' placeholder='请输入学号' bindinput='setId'></input>
     </view>
     <view class='input'>
       <image src='../../images/book_id.png'></image>
-      <input type='text' placeholder='请输入所在学院'></input>
+      <input type='text' placeholder='请输入学院班级' bindinput='setCollege'></input>
     </view>
     <view class='input'>
       <image src='../../images/book_id.png'></image>
-      <input type='text' placeholder='请输入联系方式'></input>
+      <input type='text' placeholder='请输入联系方式' bindinput='setPhone'></input>
     </view>
   </view>
-  <button class='confirm'>确定</button>
+  <button class='confirm' bindtap='toSubmit'>确定</button>
 </view>

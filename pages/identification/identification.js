@@ -1,66 +1,55 @@
-// pages/identification/identification.js
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    userName: '',
+    studentId: '',
+    college: '',
+    phone: ''
+  },
+  onShow() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  setName(e) {
+    this.setData({
+      userName: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  setId(e) {
+    this.setData({
+      studentId: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  setCollege(e) {
+    this.setData({
+      college: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  setPhone(e) {
+    this.setData({
+      phone: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  toSubmit() {
+    wx.request({
+      url: 'https://community.jystu.cn/activity/mini/resetUinfo',
+      dataType: 'json',
+      method: 'POST',
+      header: {
+        'x-access-token': app.globalData.token
+      },
+      data: {
+        realname: this.data.userName,
+        studentId: this.data.studentId,
+        classroom: this.data.college,
+        mobile: this.data.phone
+      },
+      success: (res) => {
+        if (!res || res.data.errcode != 0) {
+          win.toast("提交失败", "none");
+          return;
+        }
+        win.toast("提交成功");
+      }
+    })
   }
 })
