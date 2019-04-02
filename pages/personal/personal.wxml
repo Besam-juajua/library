@@ -1,0 +1,33 @@
+<view class='personal_page'>
+  <view class='profile'>
+    <image src='{{profile.img}}'></image>
+    <view class='information'>
+      <text>姓名：{{profile.nickName}}</text>
+      <text>学号：{{profile.id}}</text>
+      <text>当前待还数量：{{profile.willReturn}}</text>
+    </view>
+  </view>
+  <view class='personal_item' bindtap='goHistory'>
+    <image src='../../images/information.png'></image>
+    <text>借书记录</text>
+    <image src='../../images/go_icon.png'></image>
+  </view>
+  <view class='personal_item' bindtap='goMessage'>
+    <image src='../../images/information.png'></image>
+    <text>系统消息</text>
+    <image src='../../images/go_icon.png'></image>
+  </view>
+  <view class='personal_item' bindtap='goIdentification'>
+    <image src='../../images/information.png'></image>
+    <text>学生认证</text>
+    <image src='../../images/go_icon.png'></image>
+  </view>
+
+  <view class='personal_item about_us' bindtap='goAboutUs'>
+    <image src='../../images/information.png'></image>
+    <text>关于我们</text>
+    <image src='../../images/go_icon.png'></image>
+  </view>
+</view>
+<import src="../userauth/userauth.wxml" />
+<template is="userauth" wx:if='{{_needLogin}}'></template>

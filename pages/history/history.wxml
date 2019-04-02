@@ -1,0 +1,14 @@
+<view class='record_page'>
+  <view class='record_item' wx:for='{{bookList}}' wx:key=''>
+    <view class='record_content'>
+      <view class='content_title'>
+        <image src='../../images/book_id.png'></image>
+        <h3>{{item.bookName}}</h3>
+      </view>
+      <text>借书时间：{{item.borrowTime}}</text>
+      <text>还书时间：{{item.returnTime}}</text>
+      <text>当前状态：{{item.currentState}}</text>
+    </view>
+    <button class="btn {{item.hasReturn==0?'btn_primary':item.hasReturn==1?'btn_info':'btn_danger'}}">{{item.hasReturn==0?"已归还":item.hasReturn==1?"租用中":"已逾期"}}</button>
+  </view>
+</view>

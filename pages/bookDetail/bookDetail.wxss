@@ -1,0 +1,82 @@
+.detail_page {
+  padding: 12rpx 0;
+}
+
+.book {
+  margin: 0 12rpx;
+  height: 304rpx;
+  background: #8BC34A;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+
+.book image {
+  width: 270rpx;
+  height: 260rpx;
+  margin: 20rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  float: left;
+}
+
+.content {
+  width: 380rpx;
+  float: left;
+}
+
+.content h3 {
+  display: block;
+  font-size: 32rpx;
+  margin: 42rpx 0;
+  color: #101010;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content text {
+  display: block;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  color: #101010;
+  opacity: .7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.introduction {
+  height: 560rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin: 16rpx 12rpx 0;
+  padding: 10rpx 14rpx;
+  overflow: hidden;
+}
+
+.introduction h3 {
+  display: block;
+  font-size: 28rpx;
+}
+
+.introduction text {
+  display: block;
+  height: 460rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  text-indent: 56rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+}
+
+.btn_borrow {
+  height: 88rpx;
+  margin-top: 100rpx;
+  background: #8BC34A;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  border-radius: 0;
+}

@@ -1,0 +1,35 @@
+.message_page {
+  padding: 20rpx 30rpx 20rpx 36rpx;
+}
+
+.message_item {
+  height: 158rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 14rpx;
+}
+
+.red_bar {
+  width: 48rpx;
+  height: 100%;
+  float: left;
+  background: #E51C23;
+  margin-right: 34rpx;
+}
+
+.content h3 {
+  display: block;
+  font-size: 32rpx;
+  line-height: 38rpx;
+  margin-top: 22rpx;
+}
+
+.content text {
+  display: block;
+  font-size: 28rpx;
+  line-height: 38rpx;
+  margin-top: 20rpx;
+  color: #B5ADAD;
+}

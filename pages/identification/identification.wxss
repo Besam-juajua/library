@@ -1,0 +1,41 @@
+
+
+.search {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.input {
+  margin: 0 34rpx 10rpx;
+  height: 80rpx;
+  display: flex;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  background: #E1DCDC;
+  border-radius: 10rpx;
+}
+
+.input image {
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+  float: left;
+  margin: 16rpx 26rpx 16rpx 24rpx;
+}
+
+.input input {
+  flex: 1;
+  height: 80rpx;
+  font-size: 28rpx;
+}
+
+.confirm {
+  width: 358rpx;
+  height: 80rpx;
+  background: #A5CFEE;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  margin-top: 68rpx;
+  letter-spacing: 60rpx;
+  padding-left: 88rpx;
+}

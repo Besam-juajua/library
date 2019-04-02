@@ -1,0 +1,5 @@
+<view class='about_us'>
+  <view class='content'>
+    {{aboutUs}}
+  </view>
+</view>

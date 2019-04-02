@@ -1,0 +1,10 @@
+<view class='borrow_page'>
+  <view class='search'>
+    <view class='input'>
+      <image src='../../images/book_id.png'></image>
+      <input type='text' placeholder='请输入当前书籍对应编号'></input>
+      <image src='../../images/test.png'></image>
+    </view>
+  </view>
+  <button class='confirm'>确定</button>
+</view>

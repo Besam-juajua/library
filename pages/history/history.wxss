@@ -1,0 +1,71 @@
+.record_page {
+  padding: 20rpx 28rpx 0 36rpx;
+}
+
+.record_item {
+  height: 294rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  position: relative;
+  margin-bottom: 24rpx;
+}
+
+.record_content {
+  padding-left: 24rpx;
+  width: 60%;
+}
+
+.content_title {
+  margin-top: 16rpx;
+  margin-bottom: 28rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+}
+
+.content_title image {
+  width: 48rpx;
+  height: 48rpx;
+  float: left;
+}
+
+.content_title h3 {
+  display: block;
+  float: left;
+  margin-left: 26rpx;
+  font-size: 32rpx;
+  line-height: 48rpx;
+}
+
+.record_content text {
+  display: block;
+  font-size: 28rpx;
+  line-height: 58rpx;
+  color: #B5ADAD;
+}
+
+.btn {
+  width: 200rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  border-radius: 100%;
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  color: #FFFFFF;
+  font-size: 32rpx;
+}
+
+.btn_primary {
+  background: #259B24;
+}
+
+.btn_danger {
+  background: #E51C23;
+}
+
+.btn_info {
+  background: #FF9800;
+}

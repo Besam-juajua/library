@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/borrow/borrow",
+    "pages/bookDetail/bookDetail",
+    "pages/return/return",
+    "pages/identification/identification",
+    "pages/history/history",
+    "pages/message/message",
+    "pages/about/about"
+  ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页",
+      "iconPath": "./images/home.png",
+      "selectedIconPath": "./images/home_select.png"
+    },{
+      "pagePath": "pages/personal/personal",
+      "text": "个人中心",
+      "iconPath": "./images/me.png",
+      "selectedIconPath": "./images/me_select.png"
+    }]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

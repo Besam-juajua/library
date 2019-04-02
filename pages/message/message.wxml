@@ -1,0 +1,9 @@
+<view class='message_page'>
+  <view class='message_item' wx:for='{{messageList}}' wx:key=''>
+    <view class='red_bar'></view>
+    <view class='content'>
+      <h3>{{item.title}}</h3>
+      <text>{{item.content}}</text>
+    </view>
+  </view>
+</view>

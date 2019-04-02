@@ -1,0 +1,111 @@
+@import "../userauth/userauth.wxss";
+
+.banner {
+  height: 300rpx;
+  margin: 16rpx 24rpx 24rpx 20rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #BBBBBB;
+  overflow: hidden;
+}
+
+.banner swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner_item {
+  width: 100%;
+  height: 100%;
+}
+
+.function {
+  width: 100%;
+  height: 200rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.function_item {
+  width: 114rpx;
+  height: 200rpx;
+}
+
+.function_item image {
+  width: 114rpx;
+  height: 114rpx;
+  margin-top: 20rpx;
+  border-radius: 100%;
+}
+
+.function_item text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.book_recommend {
+  width: 100%;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  padding-bottom: 0;
+  margin-top: 20rpx;
+}
+
+.book_recommend h2 {
+  font-size: 32rpx;
+  color: #101010;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.recommend_item {
+  width: 100%;
+  height: 280rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+
+.recommend_item image {
+  width: 236rpx;
+  height: 236rpx;
+  margin: 20rpx 28rpx 22rpx 24rpx;
+  display: block;
+  float: left;
+}
+
+.book {
+  width: 400rpx;
+  float: left;
+}
+
+.book h3 {
+  display: block;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+  margin-bottom: 52rpx;
+  color: #101010;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book text {
+  display: block;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  color: #101010;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book text:last-of-type {
+  height: 92rpx;
+}

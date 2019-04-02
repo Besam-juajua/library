@@ -1,0 +1,84 @@
+@import "../userauth/userauth.wxss";
+
+.profile {
+  width: 100%;
+  height: 240rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  background: #A5CFEE;
+  margin: 20rpx 0;
+}
+
+.profile image {
+  display: block;
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 100%;
+  margin: 42rpx 50rpx 42rpx 62rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  float: left;
+}
+
+.information {
+  margin-top: 60rpx;
+  font-size: 28rpx;
+}
+
+.information text {
+  display: block;
+  line-height: 40rpx;
+}
+
+.personal_item {
+  width: 100%;
+  height: 80rpx;
+  border: 2rpx solid #BBBBBB;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+  line-height: 80rpx;
+}
+
+.personal_item image:first-of-type {
+  display: block;
+  width: 44rpx;
+  height: 44rpx;
+  float: left;
+  margin: 18rpx 22rpx 18rpx 34rpx;
+}
+
+.personal_item text {
+  display: block;
+  float: left;
+  font-size: 28rpx;
+  color: #101010;
+}
+
+.personal_item image:last-of-type {
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+  float: right;
+  margin: 16rpx;
+}
+
+.about_us {
+  margin-top: 66rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

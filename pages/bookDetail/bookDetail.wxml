@@ -1,0 +1,17 @@
+<!--pages/bookDetail/bookDetail.wxml-->
+<view class='detail_page'>
+  <view class='book'>
+    <image src='{{book.img}}'></image>
+    <view class='content'>
+      <h3>{{book.name}}</h3>
+      <text>作者：{{book.author}}</text>
+      <text>出版社：{{book.publish}}</text>
+      <text>书籍编号：{{book.num}}</text>
+    </view>
+  </view>
+  <view class='introduction'>
+    <h3>书籍简介:</h3>
+    <text>{{book.introduction}}</text>
+  </view>
+  <button class='btn_borrow'>我要借书</button>
+</view>

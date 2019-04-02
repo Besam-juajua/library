@@ -1,0 +1,39 @@
+<view class="home_page">
+  <!-- 轮播banner -->
+  <view class='banner'>
+    <swiper autoplay='true' circular='true' duration='500' interval='3000'>
+      <swiper-item wx:for="{{bannerList}}" wx:key=''>
+        <image class='banner_item' src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 借书还书 -->
+  <view class='function'>
+    <view class='function_item' bindtap='goBorrow'>
+      <!-- <view class='borrow'> -->
+        <image src='https://dummyimage.com/600x400/000/fff'></image>
+        <text>借书</text>
+      <!-- </view> -->
+    </view>
+    <view class='function_item' bindtap='goReturn'>
+      <!-- <view class='return'> -->
+        <image src='https://dummyimage.com/600x400/000/fff'></image>
+        <text>还书</text>
+      <!-- </view> -->
+    </view>
+  </view>
+  <!-- 图书推荐 -->
+  <view class='book_recommend'>
+    <h2>图书推荐</h2>
+    <view class='recommend_item' wx:for="{{bookList}}" wx:key='' bindtap='goBookDetail'>
+      <image src='{{item.img}}'></image>
+      <view class='book'>
+        <h3>{{item.bookName}}</h3>
+        <text>作者：{{item.author}}</text>
+        <text>简介：{{item.introduction}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="../userauth/userauth.wxml" />
+<template is="userauth" wx:if='{{_needLogin}}'></template>
