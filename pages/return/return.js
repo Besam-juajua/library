@@ -31,14 +31,14 @@ Page({
         bookNo: this.data.bookNo
       },
       success: (res) => {
-        console.log(res)
         if (!res || res.data.errcode != 0) {
           win.toast("请求失败", "none");
           return;
         }
+        let result = res.data.description.description;
         wx.showModal({
-          title: '还书结果',
-          content: res.data.description.description,
+          title: result == 'SUCCESS'? '还书成功' : '还书失败',
+          content: result == 'SUCCESS'? '恭喜还书成功' : res.data.description.description,
           showCancel: false
         })
       }

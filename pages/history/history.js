@@ -24,7 +24,6 @@ let loadMessageList = function (page, self, isReload = false) {
       page: page
     },
     success: (res) => {
-      console.log(res.data)
       if (!res || res.data.errcode != 0) {
         win.toast("请求失败", "none");
         return;
@@ -41,8 +40,7 @@ let loadMessageList = function (page, self, isReload = false) {
         bookList: bookList,
         page: isReload ? 1 : self.data.page + 1
       })
-      console.log(bookList);
-      wx.stopPullDownRefresh;
+      wx.stopPullDownRefresh();
     }
   })
 }

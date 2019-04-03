@@ -18,12 +18,12 @@ let loadMessageList = function(page, self, isReload = false) {
         win.toast("请求失败", "none");
         return;
       }
-      list.concat(res.data.description.data.systemMsgs);
+      list = list.concat(res.data.description.data.systemMsgs);
       self.setData({
         messageList: list,
         page: isReload? 1 : self.data.page + 1
       })
-      wx.stopPullDownRefresh;
+      wx.stopPullDownRefresh();
     }
   })
 }

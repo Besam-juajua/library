@@ -45,14 +45,14 @@ Page({
         day: this.data.day
       },
       success: (res) => {
-        console.log(res)
         if (!res || res.data.errcode != 0) {
           win.toast("请求失败", "none");
           return;
         }
+        let result = res.data.description.description;
         wx.showModal({
-          title: '借书结果',
-          content: res.data.description.description,
+          title: result == 'SUCCESS'? '借书成功' : '借书失败',
+          content: result == 'SUCCESS'? '恭喜借书成功': result,
           showCancel: false
         })
       }

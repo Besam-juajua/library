@@ -1,4 +1,5 @@
 <view class='record_page'>
+  <text class='no-history' wx:if='{{bookList.length==0}}'>暂无记录</text>
   <view class='record_item' wx:for='{{bookList}}' wx:key=''>
     <view class='record_content'>
       <view class='content_title'>

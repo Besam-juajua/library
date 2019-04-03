@@ -9,3 +9,14 @@
   text-indent: 56rpx;
   color: #101010;
 }
+
+.copyright {
+  display: block;
+  width: 100%;
+  font-size: 20rpx;
+  position: fixed;
+  bottom: 10rpx;
+  color: #000011;
+  letter-spacing: 4rpx;
+  text-align: center;
+}

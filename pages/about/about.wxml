@@ -3,3 +3,4 @@
     {{aboutUs}}
   </view>
 </view>
+<text class='copyright'>{{copyright}}</text>

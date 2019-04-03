@@ -3,7 +3,7 @@
   <view class='banner'>
     <swiper autoplay='true' circular='true' duration='500' interval='3000'>
       <swiper-item wx:for="{{bannerList}}" wx:key=''>
-        <image class='banner_item' src="{{item}}"></image>
+        <image class='banner_item' src="{{resPath}}{{item.path}}"></image>
       </swiper-item>
     </swiper>
   </view>

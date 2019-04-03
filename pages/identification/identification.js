@@ -1,4 +1,5 @@
 const app = getApp();
+const win = require('../../tools/win.js');
 Page({
   data: {
     userName: '',
@@ -48,7 +49,12 @@ Page({
           win.toast("提交失败", "none");
           return;
         }
-        win.toast("提交成功");
+        let result = res.data.description.description;
+        wx.showModal({
+          title: result == 'SUCCESS'?"提交成功" : "提交失败",
+          content: result == 'SUCCESS'? "恭喜提交成功" : result,
+          showCancel: false
+        })
       }
     })
   }

@@ -45,7 +45,6 @@ Page({
         'x-access-token': app.globalData.token
       },
       success: (res)=> {
-        console.log(res.data.description.data.userinfo)
         if (!res || res.data.errcode != 0) {
           win.toast("请求失败", "none");
           return;

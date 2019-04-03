@@ -4,11 +4,7 @@ const app = getApp();
 Page({
   data: {
     resPath: 'https://community.jystu.cn',
-    bannerList: [
-      'https://dummyimage.com/600x400/000/fff',
-      'https://dummyimage.com/600x400/000/fff',
-      'https://dummyimage.com/600x400/000/fff'
-    ],
+    bannerList: [],
     bookList: [],
     _needLogin: false
   },
@@ -50,7 +46,7 @@ Page({
           return;
         }
         this.setData({
-          // bannerList: res.data.description.data.advers
+          bannerList: res.data.description.data.advers
         })
       }
     })
@@ -66,7 +62,6 @@ Page({
         page: 1
       },
       success: (res) => {
-        console.log(res)
         if (!res || res.data.errcode != 0) {
           win.toast("获取列表失败", "none")
           return;
